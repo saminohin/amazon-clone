@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Amazon Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Checkout Specific Styles */
+        .checkout-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .checkout-items {
+            flex: 2;
+            background: white;
+            padding: 20px;
+        }
+        .checkout-summary {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            height: fit-content;
+        }
+        .checkout-item {
+            display: flex;
+            gap: 20px;
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+        }
+        .checkout-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+        }
+        .checkout-item-details { flex: 1; }
+        .checkout-item-details h3 { font-size: 18px; margin-bottom: 5px; }
+        .checkout-item-details .price { color: #B12704; font-weight: bold; font-size: 16px; margin-bottom: 10px; }
+        .checkout-btn {
+            background-color: #ffd814;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        .checkout-btn:hover { background-color: #f7ca00; }
+        .order-total {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #B12704;
+        }
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #007185;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .remove-btn:hover { text-decoration: underline; color: #C7511F; }
+    </style>
+</head>
+<body>
+    <header class="navbar" style="justify-content: center; height: 60px;">
+        <a href="index.html" class="nav-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
+        </a>
+    </header>
+
+    <div class="checkout-container">
+        <div class="checkout-items">
+            <h2 style="border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 20px;">Shopping Cart</h2>
+            <div id="cart-list"></div>
+        </div>
+        <div class="checkout-summary">
+            <h3>Subtotal</h3>
+            <div class="order-total">
+                <span>Total:</span>
+                <span id="subtotal-price">$0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="placeOrder()">Proceed to checkout</button>
+        </div>
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+</html>

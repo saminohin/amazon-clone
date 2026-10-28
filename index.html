@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. TOP NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
+        </a>
+
+        <div class="nav-deliver">
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="deliver-text">
+                <span class="nav-line-1">Deliver to</span>
+                <span class="nav-line-2"></span>
+            </div>
+        </div>
+
+        <div class="nav-search">
+            <select class="search-select">
+                <option>All</option>
+                <option>Electronics</option>
+                <option>Books</option>
+            </select>
+            <input type="text" class="search-input" placeholder="Search Amazon">
+            <button class="search-button" onclick="performSearch()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <div class="nav-language">
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="US Flag">
+            <span>EN</span>
+            <i class="fa-solid fa-caret-down"></i>
+        </div>
+
+        <div class="nav-signin">
+            <span class="nav-line-1">Hello, sign in</span>
+            <span class="nav-line-2">Account & Lists <i class="fa-solid fa-caret-down"></i></span>
+        </div>
+
+        <div class="nav-returns">
+            <span class="nav-line-1">Returns</span>
+            <span class="nav-line-2">& Orders</span>
+        </div>
+
+        <a href="checkout.html" class="nav-cart">
+            <div class="cart-icon-container">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count">0</span>
+            </div>
+            <span class="cart-text">Cart</span>
+        </a>
+    </header>
+
+    <!-- 2. SUB NAVBAR -->
+    <nav class="sub-nav">
+        <div class="nav-item">
+            <i class="fa-solid fa-bars"></i> All
+        </div>
+        <div class="nav-item">Today's Deals</div>
+        <div class="nav-item">Customer Service</div>
+        <div class="nav-item">Registry</div>
+        <div class="nav-item">Gift Cards</div>
+        <div class="nav-item">Sell</div>
+    </nav>
+
+    <!-- 3. HERO SECTION -->
+    <div class="hero-wrapper">
+        <div class="hero-section">
+            <div class="carousel">
+                <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1500&auto=format&fit=crop" alt="Banner 1" class="carousel-img active">
+                <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=1500&auto=format&fit=crop" alt="Banner 2" class="carousel-img">
+                <button class="carousel-btn prev" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="carousel-btn next" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            
+            <!-- The Overlapping Cards -->
+            <div class="hero-cards">
+                <div class="card">
+                    <h2>Get 5% cash back</h2>
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&auto=format&fit=crop" alt="Makeup">
+                    <a href="#">Shop now</a>
+                </div>
+                <div class="card">
+                    <h2>Save on Thanksgiving picks</h2>
+                    <img src="https://images.unsplash.com/photo-1519241047957-be31d7379a5d?w=400&auto=format&fit=crop" alt="Decor">
+                    <a href="#">Shop now</a>
+                </div>
+                <div class="card">
+                    <h2>Create your Holiday Gift List</h2>
+                    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&auto=format&fit=crop" alt="Gifts">
+                    <a href="#">Shop now</a>
+                </div>
+                <div class="card">
+                    <h2>Shop tech gifts</h2>
+                    <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=400&auto=format&fit=crop" alt="Tech">
+                    <a href="#">Shop now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. HOMEPAGE SCROLL ROWS -->
+    <div class="main-content" id="homepage-content">
+        <div class="scroll-section">
+            <div class="section-header">
+                <h2>Recommended deals for you</h2>
+                <a href="#">See all deals</a>
+            </div>
+            <div class="product-row" id="row-1"></div>
+        </div>
+
+        <div class="scroll-section">
+            <div class="section-header">
+                <h2>Based on your shopping</h2>
+                <a href="#">See more</a>
+            </div>
+            <div class="product-row" id="row-2"></div>
+        </div>
+    </div>
+
+    <!-- 5. SEARCH RESULTS GRID (Hidden by default) -->
+    <div class="main-content" id="search-results-section" style="display: none;">
+        <div class="scroll-section">
+            <div class="section-header">
+                <h2 id="search-title">Search Results</h2>
+                <a href="#" onclick="clearSearch()">Clear Search</a>
+            </div>
+            <div class="product-grid" id="search-grid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
